@@ -1,20 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Pomodoro App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center; font-size: 5rem;">{{ time }}:{{seconds}}</ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card-content>
+      <!-- <ion-button (click)="startTimer()">Start</ion-button>
+      <ion-button (click)="stopTimer()">Stop</ion-button>
+      <ion-button (click)="resetTimer()">Reset</ion-button> -->
+
+      <ion-button expand="full" (click)="startTimer()">Start</ion-button>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full">
+            <ion-icon name="pause"></ion-icon>
+            Pause
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full">
+            <ion-icon name="play"></ion-icon>
+            Resume
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-button expand="full">Reset</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
