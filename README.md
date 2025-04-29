@@ -6,7 +6,7 @@ Stay focused, get work done, and take meaningful breaks — all while getting no
 
 ---
 
-Features ✨
+# Features ✨
 
 ⏳ Pomodoro Timer: 25 minutes of focused work time.
 
@@ -28,7 +28,7 @@ Features ✨
 
 ---
 
-Technologies Used 🛠️
+# Technologies Used 🛠️
 
 Ionic Framework
 
@@ -45,55 +45,14 @@ App Preferences
 App State
 
 
-
 ---
 
-Getting Started 🚀
+# Project Structure 🗂️
 
-Prerequisites
-
-Node.js and npm
-
-Ionic CLI
-
-Android Studio (for Android builds)
-
-
-Installation
-
-1. Clone this repository:
-
-git clone https://github.com/your-username/PomodoroApp.git
-cd PomodoroApp
-
-
-2. Install dependencies:
-
-npm install
-
-
-3. Run in the browser (for quick testing):
-
-ionic serve
-
-
-4. To run on a real Android device:
-
-ionic cap add android
-ionic cap open android
-
-Then build and run from Android Studio!
-
-
-
-
----
-
-Project Structure 🗂️
-
-home.page.ts: Main timer logic (Pomodoro + Break timer, state saving).
+home.page.ts: Main timer logic (Pomodoro + Break timer, state saving, notifications).
 
 home.page.html: User interface for timer, clock, and controls.
 
-home.page.scss: App styling.
+home.page.scss: Some aligning in the cards properly.
 
+---
