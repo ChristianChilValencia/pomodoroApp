@@ -1,4 +1,4 @@
-# PomodoroApp ⏰
+# ⏰ PomodoroApp
 
 A mobile Pomodoro timer built with Ionic + Angular and Capacitor!
 Stay focused, get work done, and take meaningful breaks — all while getting notified with haptics and alerts!
@@ -6,7 +6,7 @@ Stay focused, get work done, and take meaningful breaks — all while getting no
 
 ---
 
-# Features ✨
+# ✨ Features
 
 ⏳ Pomodoro Timer: 25 minutes of focused work time.
 
@@ -28,7 +28,7 @@ Stay focused, get work done, and take meaningful breaks — all while getting no
 
 ---
 
-# Technologies Used 🛠️
+# 🛠️ Technologies Used
 
 Ionic Framework
 
@@ -47,7 +47,7 @@ App State
 
 ---
 
-# Project Structure 🗂️
+# 🗂️ Project Structure
 
 home.page.ts: Main timer logic (Pomodoro + Break timer, state saving, notifications).
 
