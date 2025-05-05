@@ -179,12 +179,18 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   private updateClock() {
-    this.currentTime = new Date().toLocaleTimeString();
+    this.currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
 
   private async showNotification(title: string, body: string) {
+    const now = new Date();
     await LocalNotifications.schedule({
-      notifications: [{ title, body, id: Math.random() * 100, schedule: { at: new Date() } }],
+      notifications: [{ 
+        title, 
+        body, 
+        id: now.getTime(),
+        schedule: { at: now }
+      }],
     });
     await Haptics.impact({ style: ImpactStyle.Heavy });
   }
