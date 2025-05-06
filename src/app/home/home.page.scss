@@ -1,19 +1,104 @@
-.currentTime{
-  margin-right: 16px;
+.currentTime {
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
-.workStatus{
+.workStatus {
   position: absolute;
   top: 16px;
   left: 16px;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-.clockTimer{
-  font-size: 5rem;
+.clockTimer {
+  font-size: 4rem;
+  font-weight: 700;
   text-align: center;
   margin-top: 50px;
 }
 
-.breakMessage{
+.breakMessage {
   text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px;
+}
+
+ion-card {
+  margin: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  ion-card-header {
+    text-align: center;
+    padding: 20px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.light-theme {
+  ion-content {
+    --background: #f4f5f8;
+  }
+
+  .work-card {
+    background: #ffffff;
+    color: #333333;
+  }
+
+  .break-card {
+    background: #e8f5e9;
+    color: #1b5e20;
+  }
+
+
+  .breakMessage {
+    color: #2e7d32;
+  }
+}
+
+  .work-card {
+    background: #1e1e1e;
+    color: #ffffff;
+  }
+
+  .break-card {
+    background: #1b3929;
+    color: #81c784;
+  }
+
+  .breakMessage {
+    color: #a5d6a7;
+  }
+
+ion-footer {
+  ion-button {
+    font-weight: 600;
+
+    ion-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.running .clockTimer {
+  animation: pulse 2s infinite;
 }

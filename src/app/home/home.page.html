@@ -2,19 +2,21 @@
   <ion-toolbar>
     <ion-title>Pomodoro App</ion-title>
     <ion-card-subtitle slot="end" class="currentTime">{{ currentTime }}</ion-card-subtitle>
-
+    <ion-button slot="end" fill="clear" (click)="settings()">
+      <ion-icon name="menu"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card *ngIf="!breakRunning">
+<ion-content [class.dark-theme]="isDarkMode" [class.light-theme]="!isDarkMode">
+  <ion-card *ngIf="!breakRunning" [class.work-card]="true">
     <ion-card-header>
       <ion-card-subtitle class="workStatus">💼 Work Time</ion-card-subtitle>
       <ion-card-title class="clockTimer">{{ minutes }}:{{ seconds }}</ion-card-title>
     </ion-card-header>
   </ion-card>
 
-  <ion-card *ngIf="breakRunning">
+  <ion-card *ngIf="breakRunning" [class.break-card]="true">
     <ion-card-header>
       <ion-card-subtitle class="workStatus">🌴 Break Time</ion-card-subtitle>
       <ion-card-title class="clockTimer">{{ breakMinutes }}:{{ breakSeconds }}</ion-card-title>
@@ -29,35 +31,18 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <ion-col size="10" *ngIf="!breakRunning">
-          <ion-button expand="block" color="primary" fill="clear" (click)="toggleTimer()">
-            <ion-icon [name]="running ? 'pause-circle' : 'play-circle'" slot="start"></ion-icon>
-            {{ running ? 'Pause Timer' : 'Play Timer' }}
-          </ion-button>
-        </ion-col>
-        <ion-col size="2" *ngIf="!breakRunning">
-          <ion-button color="danger" fill="clear" (click)="restartPomodoro()">
-            <ion-icon name="refresh-circle"></ion-icon>
-          </ion-button>
+        <ion-col *ngIf="!breakRunning">
+            <ion-button expand="block" [color]="running ? 'danger' : 'primary'" fill="clear" (click)="toggleTimer()">
+              <ion-icon [name]="running ? 'refresh-circle' : 'play-circle'" slot="start"></ion-icon>
+              {{ running ? 'Restart Timer' : 'Start Timer' }}
+            </ion-button>
         </ion-col>
 
-        <ion-col size="10" *ngIf="breakRunning && !breakFinished">
-          <ion-button expand="block" color="primary" fill="clear" (click)="toggleBreakTimer()">
-            <ion-icon [name]="breakActive ? 'pause-circle' : 'play-circle'" slot="start"></ion-icon>
-            {{ breakActive ? 'Pause Break' : 'Resume Break' }}
-          </ion-button>
-        </ion-col>
-        <ion-col size="2" *ngIf="breakRunning && !breakFinished">
-          <ion-button color="danger" fill="clear" (click)="restartPomodoro()">
-            <ion-icon name="close-circle"></ion-icon>
-          </ion-button>
-        </ion-col>
-
-        <ion-col size="12" *ngIf="breakFinished">
-          <ion-button expand="block" color="success" fill="clear" (click)="restartPomodoro()">
-            <ion-icon name="refresh-circle"></ion-icon>
-            Start New Pomodoro
-          </ion-button>
+        <ion-col *ngIf="breakRunning">
+            <ion-button expand="block" color="success" fill="clear" (click)="restartPomodoroBreak()">
+              <ion-icon name="refresh-circle" slot="start"></ion-icon>
+              Restart Your Pomodoro
+            </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
